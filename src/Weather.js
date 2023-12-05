@@ -4,6 +4,10 @@ import "./weather.css";
 export default function Weather() {
   return (
     <div className="weather border m-5">
+      <form>
+        <input type="text" placeholder="Enter a city.." />
+        <input type="submit" value="search" className="btn" />
+      </form>
       <h1>Sydney</h1>
       <ul>
         <li>
@@ -19,7 +23,7 @@ export default function Weather() {
             <br />
             Tue
             <br />
-            22|15
+            22 | 15
           </div>
           <div className="col border m-2">
             🌦
