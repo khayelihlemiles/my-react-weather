@@ -1,3 +1,45 @@
-.btn {
-  background-color: bisque;
+.weather {
+  border: 1px solid #f5eee6;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 500px;
+  background-color: #f5eee6;
+}
+.weather li {
+  list-style: none;
+}
+
+.weather ul {
+  margin: 0;
+}
+.weather h1 {
+  position: relative;
+  left: 30px;
+}
+.weather h2 {
+  position: relative;
+  left: 300px;
+  top: -50px;
+  font-size: 40px;
+  font-weight: normal;
+}
+.weekdays {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+.type {
+  border-radius: 10px;
+  border: 2px solid #f3d7ca;
+  margin: 20px;
+  width: 300px;
+}
+.button {
+  border: 1px solid #f3d7ca;
+  border-radius: 10px;
+  background: #f3d7ca;
+}
+form {
+  text-align: center;
 }
