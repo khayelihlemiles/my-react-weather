@@ -3,16 +3,17 @@ import "./weather.css";
 import axios from "axios";
 
 export default function Weather() {
-  const { ready, setReady } = useState(false);
-  const { weatherData, setWeatherData } = useState({});
+  const [ready, setReady] = useState(false);
+  const [weatherData, setWeatherData] = useState({});
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       temperature: response.data.temperature.current,
-      wind: 12,
+      wind: response.data.wind.speed,
       city: response.data.city,
       humidity: response.data.temperature.humidity,
       description: response.data.condition.description,
+      iconUrl: "",
     });
 
     setReady(true);
@@ -29,12 +30,13 @@ export default function Weather() {
           <li>
             Monday 22:36, <strong>{weatherData.description}</strong>
             <li>
-              Humidity:{weatherData.humidity}, Wind speed:{weatherData.wind}/hr
+              Humidity:{weatherData.humidity}, Wind speed:{weatherData.wind}
+              km/hr
             </li>
           </li>
         </ul>
         <h2>
-          🌦
+          <img src={weatherData.iconUrl} alt={weatherData.description} />
           <span className="temperature">
             {Math.round(weatherData.temperature)}
           </span>
@@ -79,7 +81,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "79be4f630f69t8bffa4o15edaf3814a6";
-    let city = "Sydney";
+    let city = "Berlin";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
