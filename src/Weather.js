@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
@@ -30,7 +30,7 @@ export default function Weather() {
         <h1>{weatherData.city}</h1>
         <ul>
           <li>
-            <currentdate date={weatherData.date} />,
+            <currentdate date={weatherData.date} />
             <strong>{weatherData.description}</strong>
             <li>
               Humidity:{weatherData.humidity}, Wind speed:{weatherData.wind}
