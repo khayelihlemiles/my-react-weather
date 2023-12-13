@@ -1,5 +1,6 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -17,10 +18,8 @@ export default function WeatherInfo(props) {
       </ul>
       <h2>
         <img src={props.data.iconUrl} alt={props.data.description} />
-        <span className="temperature">
-          {Math.round(props.data.temperature)}
-        </span>
-        °c
+
+        <WeatherTemperature celsius={props.data.temperature} />
       </h2>
       <div className="weekdays">
         <div>
